@@ -1,0 +1,40 @@
+#全局变量配置
+system:
+  env: 'public'  # Change to "develop" to skip authentication for development mode
+  addr: 8088
+  db-type: 'mysql'
+  oss-type: 'local'
+  use-multipoint: false  #单点登录
+
+# 数据库
+mysql:
+  path: '127.0.0.1:3306'
+  config: 'charset=utf8mb4&parseTime=True&loc=Local'
+  db-name: 'go-admin'
+  username: 'root'
+  password: '123456'
+  max-idle-conns: 10
+  max-open-conns: 10
+  log-mode: false
+
+# redis configuration
+redis:
+  db: 0
+  addr: '127.0.0.1:6379'
+  password: ''
+
+# 日志配置 zap logger configuration
+zap:
+  level: 'info'
+  format: 'console'
+  prefix: '[GO-ADMIN]'
+  director: 'log'
+  link-name: 'latest_log'
+  show-line: true
+  encode-level: 'LowercaseColorLevelEncoder'
+  stacktrace-key: 'stacktrace'
+  log-in-console: true
+
+# local configuration 静态文件存储
+local:
+  path: 'uploads/file'
